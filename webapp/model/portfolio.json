@@ -1,0 +1,69 @@
+{
+    "name":"Niharika Chauhan",
+    "email":"chauhanniharika@gmail.com",
+    "designation":"UI Developer",
+    "phone":"+61451803380",
+    "citizenship":"Australia",
+    "education":[
+        {
+            "degree":"Bachelor of Engineering in Information Technology",
+            "name":"G H Raisoni College of Engineering, Nagpur",
+            "year":2012
+        },
+        {
+            "degree":"Higher Secondary Examination",
+            "name":"D.B.M.S. English School, Jamshedpur",
+            "year":2008
+        },
+        {
+            "degree":"Secondary Examination",
+            "name":"Rajendra Vidyalaya, Jamshedpur",
+            "year":2006
+        }
+    ], 
+    "certification":[
+        {
+            "name":"SAP Certified Development Associate",
+            "subname":"SAP Fiori Application Developer",
+            "company":"test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png"
+        },
+        {
+            "name":"SAP Certified Development Associate",
+            "subname":"SAP HANA",
+            "company":"test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png"
+        },
+        {
+            "name":"The Web Developer Bootcamp",
+            "subname":"HTML5 CSS3 Bootstrap JavaScript jQuery NPM  NodeJS Express MongoDB",
+            "company":"data:image/png;base64,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"
+        }
+    ], 
+    "employment":[
+        {  "name":"Capgemini Australia",
+           "client":[
+           {
+               "name":"Services Australia",
+               "role":"SAP HANA Consultant"
+            }
+             ]
+   
+    
+  },{  "name":"TATA Consultancy Services Ltd, India.",
+           "client":[
+               {
+                "name":"WB-RAPDRP, Power Finance Corp. Ltd (Govt. of India)",
+                "role":"SAP BW/HANA/BI Consultant"
+                },
+                {
+                "name":"Veolia-OCW, Veolia Water (France)",
+                "role":"SAP BW/BI Consultant"
+                },
+                {
+                    "name":"NE-RAPDRP , Power Finance Corp. Ltd (Govt. of India)",
+                    "role":"SAP BW/BI Consultant"
+                }
+             ]
+   
+    
+  }]
+}

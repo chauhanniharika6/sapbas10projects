@@ -1,0 +1,11 @@
+<mvc:View controllerName="NE.nmallpro.controller.Tiles" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Page id="tiles">
+		<l:VerticalLayout id="vlTile">
+			<l:HorizontalLayout id="hlTile" content="{tiles>/}" allowWrapping="true">
+				<GenericTile id="gtTile" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{tiles>title}" press="onTilePress(${tiles>route})">
+				</GenericTile> <!-- press="press(${tiles>route})" -->
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>

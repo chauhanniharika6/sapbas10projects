@@ -1,0 +1,85 @@
+<mvc:View controllerName="NE.nmallpro.controller.vacc.Vacc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" 
+xmlns:grid="sap.ui.layout.cssgrid" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified">
+    <Page id="vacc">
+        <customHeader>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                <Title id="_IDGenTitle1" text="Vaccination Tracker" level="H2" />
+                <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+            </Toolbar>
+        </customHeader>
+        <subHeader>
+            <Toolbar id="_IDGenToolbar2">
+            <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+			<RadioButton id="RB3-1" valueState="Warning" text="Table" selected="{view>/table}"/>
+			<RadioButton id="RB3-2" valueState="Information" text="Calender" selected="{view>/calender}" />
+                  <ToolbarSpacer id="_IDGenToolbarSpacer4" />
+            </Toolbar>
+        </subHeader>
+        <Table id="idVaccTable"
+		inset="false"
+		items="{VaccModel>/}"
+		visible="{view>/table}">
+		<columns>
+			<Column id="_IDGenColumn1"
+				width="12em">
+				<Text id="_IDGenText1" text="Vaccination Name" />
+			</Column>
+			<Column id="_IDGenColumn2"
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text id="_IDGenText2" text="Company" />
+			</Column>
+			<Column id="_IDGenColumn3"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text id="_IDGenText3" text="Date Given/To Be Given" />
+			</Column>
+			<Column id="_IDGenColumn4"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text id="_IDGenText4" text="Type of Vaccination" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle">
+				<cells>
+					<Text id="_IDGenText5"
+						text="{VaccModel>vacc}" />
+					<Text id="_IDGenText6"
+						text="{VaccModel>company}" />
+					<Text id="_IDGenText7"
+						text="{VaccModel>date}" />
+                    <Text id="_IDGenText8"
+						text="{VaccModel>type}" />
+				
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<SinglePlanningCalendar
+			id="SPC1"
+			class="sapUiSmallMarginTop"
+			title= "My Calendar"
+			visible="{view>/calender}"
+			appointments="{path: 'VaccModel>/'}">
+			<views>
+				<SinglePlanningCalendarDayView id="_IDGenSinglePlanningCalendarDayView1" key="DayView" title="Day" />
+				<SinglePlanningCalendarWorkWeekView id="_IDGenSinglePlanningCalendarWorkWeekView1" key="WorkWeekView" title="Work Week" />
+				<SinglePlanningCalendarWeekView id="_IDGenSinglePlanningCalendarWeekView1" key="WeekView" title="Week" />
+				<SinglePlanningCalendarMonthView id="_IDGenSinglePlanningCalendarMonthView1" key="MonthView" title="Month" />
+			</views>
+			<appointments>
+				<unified:CalendarAppointment id="_IDGenCalendarAppointment1"
+					title= "{VaccModel>vacc}"
+					text= "{VaccModel>company}"
+					type="{VaccModel>ctype}"
+					startDate= "{path: 'VaccModel>date', formatter: '.formatDate'}"
+					endDate= "{path: 'VaccModel>date', formatter: '.formatDate'}">
+				</unified:CalendarAppointment>
+			</appointments>
+		</SinglePlanningCalendar>
+    </Page>
+</mvc:View>

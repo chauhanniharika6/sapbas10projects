@@ -1,0 +1,34 @@
+<mvc:View controllerName="NE.nmallpro.controller.covid.Covid" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
+xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+ xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data">
+    <Page id="covid">
+        <Panel id='settingsPanel' class="panelStyle" expandable="true" expanded="true" headerText="Data" width="auto">
+                <content>
+                    <Button id="Button1" text="Latest Count By List" press="onPressList"></Button>
+                    <Button id="Button2" text="Latest count By Graph" press="onPressGraph" ></Button>
+                </content>
+        </Panel>
+        <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{/data}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition id="_IDGenDimensionDefinition1" name="monthYear"
+                                value="{= ${day}.slice(0, 7)}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition id="_IDGenMeasureDefinition1" name="Total"
+                                value="{summary/total}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Total" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="monthYear" />
+                </viz:feeds>
+            </viz:VizFrame>
+    </Page>
+</mvc:View>

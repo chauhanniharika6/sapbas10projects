@@ -1,0 +1,99 @@
+{
+	"sap.app": {
+		"id": "card.explorer.object.card",
+		"type": "card",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.card": {
+		"type": "Object",
+		"data": {
+			"request": {
+				"url": "https://api.openweathermap.org/data/2.5/forecast?lat=-33.8688&lon=151.2093&appid=6b30a7ef5f8694de960ae094164c2337"
+			}
+		},
+		"header": {
+			"icon": {
+				"src": "{photo}"
+			},
+			"title": "{city/name}",
+			"subTitle": "{list/0/weather/0/description}"
+		},
+		"content": {
+			"groups": [
+				{
+					"title": "{{Temprature}}",
+					"items": [
+						{
+							"label": "{{Temprature}}",
+							"value": "{=${list/0/main/temp}/10}"
+						},
+						{
+							"label": "{{Feels Like}}",
+							"value": "{=${list/0/main/feels_like}/10}"
+						},
+						{
+							"label": "{{Maximum Temprature}}",
+							"value": "{=${list/0/main/temp_max}/10}"
+						},
+						{
+							"label": "{{Minimum Temprature}}",
+							"value": "{=${list/0/main/temp_min}/10}"
+						}]
+				},
+		
+				{
+					"title": "{{organizationalDetails}}",
+					"items": [
+						{
+							"label": "{{directManager}}",
+							"value": "{manager/firstName} {manager/lastName}",
+							"icon": {
+								"src": "{manager/photo}"
+							}
+						}
+					]
+				},
+				{
+					"title": "{{companyDetails}}",
+					"items": [
+						{
+							"label": "{{companyName}}",
+							"value": "{company/name}"
+						},
+						{
+							"label": "{{address}}",
+							"value": "{company/address}"
+						},
+						{
+							"label": "{{email}}",
+							"value": "{company/email}",
+							"actions": [
+								{
+									"type": "Navigation",
+									"parameters": {
+										"url": "mailto:{company/email}?subject={company/emailSubject}"
+									}
+								}
+							]
+						},
+						{
+							"label": "{{website}}",
+							"value": "{company/website}",
+							"actions": [
+								{
+									"type": "Navigation",
+									"parameters": {
+										"url": "{company/url}"
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	}
+ }
